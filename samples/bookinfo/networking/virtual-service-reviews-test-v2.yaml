@@ -8,12 +8,12 @@ spec:
   http:
   - match:
     - headers:
-        end-user:
-          exact: jason
+        cookie:
+          regex: "^(.*?;)?(user=jason)(;.*)?$"
     route:
     - destination:
         host: reviews
-        subset: v2
+        subset: v2  
   - route:
     - destination:
         host: reviews
